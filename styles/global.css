@@ -921,7 +921,7 @@ button, input, textarea, select {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: blur(10px) brightness(0.45);
+   
   transform: scale(1.1);
   z-index: 0;
 }
@@ -945,7 +945,7 @@ button, input, textarea, select {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: blur(10px) brightness(0.45);
+  
   transform: scale(1.1);
   z-index: 0;
 }
