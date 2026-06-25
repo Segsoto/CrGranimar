@@ -236,7 +236,8 @@ button, input, textarea, select {
   width: 100%;
 }
 
-.hero-landing {
+.hero-landing,
+.hero-page {
   position: relative;
   min-height: calc(100vh - 8rem);
   display: grid;
@@ -244,16 +245,19 @@ button, input, textarea, select {
   overflow: hidden;
 }
 
-.hero-landing::before {
-  content: '';
+.hero-bg {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(180deg, rgba(12,12,12,0.26), rgba(9,9,9,0.86)),
-                    url('img/imageninicio.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  overflow: hidden;
   z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .hero-overlay {
@@ -686,6 +690,24 @@ button, input, textarea, select {
   box-shadow: var(--shadow);
 }
 
+.category-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(10px) brightness(0.45);
+  transform: scale(1.08);
+  z-index: 0;
+}
+
+.category-card span,
+.category-card p {
+  position: relative;
+  z-index: 2;
+}
+
 .category-card span {
   font-size: 1.55rem;
   text-transform: uppercase;
@@ -704,6 +726,7 @@ button, input, textarea, select {
   inset: 0;
   background: linear-gradient(145deg, rgba(255,255,255,0.04), transparent 40%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .contact-layout {
