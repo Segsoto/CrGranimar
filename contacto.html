@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Granimar CR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/global.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark">GR</span>
+        <span class="brand-name">Granimar CR</span>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="quienessomos.html">Nosotros</a>
+        <a href="materiales.html">Materiales</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-page hero-split">
+        <div class="hero-copy animate-item">
+          <p class="eyebrow">COTIZACIÓN</p>
+          <h1>Conecta con nuestro equipo técnico.</h1>
+          <p>Envía tu proyecto y recibe una propuesta detallada para sobremuebles, encimeras y acabados en piedra. Nuestro equipo revisa cada requerimiento con precisión.</p>
+        </div>
+        <div class="hero-quote animate-item">
+          <p>Responde en menos de 24 horas con una aproximación profesional de alcance, tiempos y materiales.</p>
+        </div>
+      </section>
+
+      <section class="contact-layout">
+        <div class="contact-panel animate-item">
+          <h2>Formulario de solicitud</h2>
+          <p>Describe tu proyecto, tipo de material deseado y medidas estimadas. Nuestro equipo se encarga de la coordinación técnica y de obra.</p>
+          <ul>
+            <li>Materiales: Cuarzo, Granito, Mármol, Porcelánico, Calacatta</li>
+            <li>Áreas: Cocina, baño, isla, lavamanos, paredes, escaleras</li>
+            <li>Atención en San José y proyectos nacionales</li>
+          </ul>
+        </div>
+
+        <form class="contact-form animate-item" action="#" method="post">
+          <label>
+            Nombre completo
+            <input type="text" name="name" placeholder="Tu nombre" required />
+          </label>
+          <label>
+            Correo electrónico
+            <input type="email" name="email" placeholder="ejemplo@correo.com" required />
+          </label>
+          <label>
+            Teléfono
+            <input type="tel" name="phone" placeholder="+506 1234 5678" />
+          </label>
+          <label>
+            Tipo de material
+            <select name="material">
+              <option>Granito</option>
+              <option>Cuarzo</option>
+              <option>Mármol</option>
+              <option>Porcelánico</option>
+              <option>Calacatta</option>
+            </select>
+          </label>
+          <label>
+            Descripción del proyecto
+            <textarea name="details" rows="6" placeholder="Describe el espacio, medidas aproximadas y requerimientos de instalación."></textarea>
+          </label>
+          <button type="submit">Solicitar cotización</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Granimar CR · Fabricación de sobremuebles de lujo · San José, Costa Rica</p>
+      <nav class="footer-nav" aria-label="Navegación de pie de página">
+        <a href="ubicacion.html">Ubicación</a>
+        <a href="materiales.html">Catálogo</a>
+      </nav>
+    </footer>
+  </div>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>
