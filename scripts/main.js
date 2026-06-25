@@ -18,6 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const header = document.querySelector('.site-header');
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelectorAll('.main-nav a');
+
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      const opened = header.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+    });
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (header.classList.contains('nav-open')) {
+        header.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 22);
   });
