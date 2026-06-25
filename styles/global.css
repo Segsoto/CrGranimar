@@ -407,6 +407,7 @@ button, input, textarea, select {
 }
 
 .materials-card {
+  position: relative;
   min-height: 12rem;
   display: grid;
   place-items: center;
@@ -419,11 +420,41 @@ button, input, textarea, select {
   font-weight: 700;
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, border-color 0.25s ease;
+  overflow: hidden;
+}
+
+.materials-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(10px) brightness(0.45);
+  transform: scale(1.08);
+  z-index: 0;
 }
 
 .materials-card:hover {
   transform: translateY(-3px);
   border-color: rgba(185,169,127,0.35);
+}
+
+.materials-card {
+  color: #ffffff;
+}
+
+.materials-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12,12,12,0.45), rgba(9,9,9,0.7));
+  z-index: 1;
+}
+
+.materials-card > * {
+  position: relative;
+  z-index: 2;
 }
 
 .materials-card.granite { background: linear-gradient(135deg, rgba(26,26,26,0.9), rgba(41,41,41,0.95)); }
@@ -883,6 +914,18 @@ button, input, textarea, select {
   color: transparent;
 }
 
+.sample-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(10px) brightness(0.45);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
 .project-grid {
   grid-template-columns: repeat(3, minmax(12rem, 1fr));
 }
@@ -893,6 +936,18 @@ button, input, textarea, select {
   border: 1px solid rgba(255,255,255,0.08);
   overflow: hidden;
   background-color: #111;
+}
+
+.project-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(10px) brightness(0.45);
+  transform: scale(1.1);
+  z-index: 0;
 }
 
 .project-card::before {
