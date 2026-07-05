@@ -1075,8 +1075,29 @@ button, input, textarea, select {
     background: rgba(185,169,127,0.12);
   }
 
-  .hero-page {
+  .hero-page,
+  .hero-landing {
+    min-height: auto;
     padding: 3rem 1.25rem;
+  }
+
+  .hero-content {
+    width: min(100%, 58rem);
+    padding: 3rem 1rem;
+  }
+
+  .hero-support {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-button {
+    width: 100%;
+    max-width: 18rem;
   }
 
   .contact-layout,
@@ -1125,11 +1146,22 @@ button, input, textarea, select {
   }
 
   .hero-content h1 {
-    font-size: 2.6rem;
+    font-size: clamp(2.1rem, 8vw, 2.8rem);
+    letter-spacing: 0.12em;
+  }
+
+  .hero-copy {
+    font-size: 0.98rem;
   }
 
   .hero-landing {
-    min-height: calc(100vh - 7rem);
+    min-height: auto;
+    padding-block: 3rem 2rem;
+  }
+
+  .materials-preview,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
   }
 
   .section-grid,
