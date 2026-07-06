@@ -433,6 +433,7 @@ button, input, textarea, select {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: 1rem;
+  align-items: stretch;
 }
 
 .materials-card {
@@ -440,27 +441,27 @@ button, input, textarea, select {
   aspect-ratio: 1 / 1;
   min-height: 13rem;
   display: grid;
-  place-items: center;
+  grid-template-rows: minmax(0, 1fr) auto;
   border-radius: 1.15rem;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 2px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.04);
-  color: var(--text);
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-weight: 700;
+  font-size:1.5rem;
+  text-align: center;
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, border-color 0.25s ease;
   overflow: hidden;
 }
 
 .materials-card-bg {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.7);
+  filter: brightness(0.9);
   transform: scale(1);
   z-index: 0;
 }
@@ -470,21 +471,30 @@ button, input, textarea, select {
   border-color: rgba(185,169,127,0.35);
 }
 
-.materials-card {
-  color: #ffffff;
-}
-
 .materials-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(12,12,12,0.45), rgba(9,9,9,0.7));
+  background: linear-gradient(180deg, rgba(12,12,12,0.12), rgba(9,9,9,0.28));
   z-index: 1;
+  pointer-events: none;
 }
 
 .materials-card > * {
   position: relative;
   z-index: 2;
+}
+
+.materials-card-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.4rem;
+  padding: 0.8rem 0.9rem;
+  background: rgba(8, 8, 8, 0.9);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  line-height: 1.25;
+  color: #ffffff;
 }
 
 .materials-card.granite { background: linear-gradient(135deg, rgba(26,26,26,0.9), rgba(41,41,41,0.95)); }
@@ -512,12 +522,21 @@ button, input, textarea, select {
   min-height: 14rem;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 0;
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow);
   display: grid;
-  align-items: end;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: stretch;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .portfolio-card p {
@@ -527,6 +546,9 @@ button, input, textarea, select {
   color: var(--text);
   text-transform: uppercase;
   letter-spacing: 0.14em;
+  padding: 1rem 1.2rem;
+  background: rgba(8, 8, 8, 0.9);
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .portfolio-card.variant-1 { background: linear-gradient(135deg, rgba(25,25,25,0.95), rgba(40,40,40,0.96)); }
