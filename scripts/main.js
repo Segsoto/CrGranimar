@@ -21,6 +21,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelectorAll('.main-nav a');
 
+  // Set CSS variables for header height and viewport height to handle mobile address bar
+  function setViewportVars() {
+    const root = document.documentElement;
+    if (header) {
+      root.style.setProperty('--header-height', `${header.offsetHeight}px`);
+    }
+    // --vh: 1% of the viewport height (dynamic, respects mobile chrome address bar)
+    const vh = window.innerHeight * 0.01;
+    root.style.setProperty('--vh', `${vh}px`);
+  }
+
+  // initialize and keep in sync
+  setViewportVars();
+  window.addEventListener('resize', setViewportVars);
+  window.addEventListener('orientationchange', setViewportVars);
+
   if (navToggle) {
     navToggle.addEventListener('click', () => {
       const opened = header.classList.toggle('nav-open');

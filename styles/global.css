@@ -1,5 +1,6 @@
 :root {
   --bg: #090909;
+  --header-height: 6rem;
   --panel: #111111;
   --surface: #1b1b1b;
   --text: #f4f4f4;
@@ -16,12 +17,21 @@
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 html, body {
   min-height: 100%;
 }
 
 body {
+  width: 100%;
+  overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
   background: radial-gradient(circle at top left, rgba(255,255,255,0.04), transparent 35%),
               linear-gradient(180deg, #0a0a0a 0%, #080808 100%);
   color: var(--text);
@@ -37,6 +47,12 @@ body.page-ready {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+
+.page-shell,
+main {
+  overflow-x: hidden;
 }
 
 a {
@@ -70,6 +86,7 @@ button, input, textarea, select {
   background: rgba(9, 9, 9, 0.92);
   border-bottom: 1px solid rgba(255,255,255,0.06);
   backdrop-filter: blur(16px);
+  height: var(--header-height);
 }
 
 .brand {
@@ -239,9 +256,12 @@ button, input, textarea, select {
 .hero-landing,
 .hero-page {
   position: relative;
-  min-height: calc(100vh - 8rem);
+  /* hero should fill viewport minus header; prefer dynamic --vh to avoid mobile address-bar issues */
+  min-height: calc((var(--vh, 1vh) * 100) - var(--header-height));
+  /* fallback for browsers without --vh */
+  min-height: calc(100vh - var(--header-height));
   display: grid;
-  place-items: center;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -263,15 +283,23 @@ button, input, textarea, select {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9,9,9,0.6) 0%, rgba(9,9,9,0.95) 100%);
+  background: linear-gradient(180deg rgba(145, 145, 145, 0.6) 0%, rgba(255, 255, 255, 0.95) 1000%);
   z-index: 1;
 }
 
+
+.hero-overlay-inicio {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.6) 0%, rgba(255, 255, 255, 0.95) 1000%);
+  z-index: 1;
+}
 .hero-content {
   position: relative;
   z-index: 2;
+  width: min(100%, 58rem);
   max-width: 58rem;
-  padding: 4rem 1.5rem;
+  padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
   animation: revealUp 1.2s ease forwards;
   opacity: 0;
   transform: translateY(35px);
@@ -292,11 +320,12 @@ button, input, textarea, select {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 1.6rem;
+  color: white;
 }
 
 .hero-copy {
   max-width: 42rem;
-  color: var(--muted);
+  color:  white;
   font-size: 1.05rem;
   letter-spacing: 0.08em;
   margin-bottom: 2.4rem;
@@ -1065,6 +1094,7 @@ button, input, textarea, select {
   .site-header {
     flex-wrap: wrap;
     align-items: center;
+    padding: 1rem clamp(1rem, 3vw, 1.5rem);
   }
 
   .site-header.nav-open {
@@ -1078,12 +1108,21 @@ button, input, textarea, select {
   .hero-page,
   .hero-landing {
     min-height: auto;
-    padding: 3rem 1.25rem;
+    min-height: calc((var(--vh, 1vh) * 100) - var(--header-height));
+    min-height: calc(100vh - var(--header-height));
+    padding: 5.5rem 1rem 2rem;
+    align-items: start;
   }
 
   .hero-content {
-    width: min(100%, 58rem);
-    padding: 3rem 1rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0 1.25rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.25rem, 5.3vw, 3.2rem);
+    max-width: 10ch;
   }
 
   .hero-support {
@@ -1100,11 +1139,13 @@ button, input, textarea, select {
     max-width: 18rem;
   }
 
+  .section-contact,
   .contact-layout,
   .section-categories,
   .detail-grid,
   .project-grid,
-  .category-grid {
+  .category-grid,
+  .footer-advanced {
     grid-template-columns: 1fr;
   }
 
@@ -1113,6 +1154,15 @@ button, input, textarea, select {
   .contact-form,
   .map-panel {
     margin: 0 1.25rem 1.5rem;
+  }
+
+  .site-footer {
+    padding-inline: 0;
+  }
+
+  .footer-advanced {
+    padding: 2.2rem 1rem;
+    gap: 1.5rem;
   }
 }
 
@@ -1142,21 +1192,23 @@ button, input, textarea, select {
   }
 
   .hero-content {
-    padding: 2.5rem 1rem;
+    padding: 0 0 1rem;
   }
 
   .hero-content h1 {
-    font-size: clamp(2.1rem, 8vw, 2.8rem);
+    font-size: clamp(2rem, 8vw, 2.7rem);
     letter-spacing: 0.12em;
   }
 
   .hero-copy {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
   }
 
   .hero-landing {
     min-height: auto;
-    padding-block: 3rem 2rem;
+    min-height: calc((var(--vh, 1vh) * 100) - var(--header-height));
+    min-height: calc(100vh - var(--header-height));
+    padding-block: 5rem 2rem;
   }
 
   .materials-preview,
@@ -1173,6 +1225,11 @@ button, input, textarea, select {
 
   .section-contact {
     grid-template-columns: 1fr;
+  }
+
+  .section-heading,
+  .section-note {
+    max-width: 100%;
   }
 }
 
