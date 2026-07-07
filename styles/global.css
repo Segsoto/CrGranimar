@@ -1244,7 +1244,20 @@ button, input, textarea, select {
     padding-block: 5rem 2rem;
   }
 
-  .materials-preview,
+  .materials-preview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .materials-card {
+    min-height: clamp(10rem, 42vw, 13.5rem);
+  }
+
+  .materials-card-label {
+    min-height: 3rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+  }
+
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
