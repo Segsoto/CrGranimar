@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navToggle) {
     navToggle.addEventListener('click', () => {
       const opened = header.classList.toggle('nav-open');
+      document.body.classList.toggle('nav-open', opened);
       navToggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
     });
   }
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       if (header.classList.contains('nav-open')) {
         header.classList.remove('nav-open');
+        document.body.classList.remove('nav-open');
         navToggle.setAttribute('aria-expanded', 'false');
       }
     });
