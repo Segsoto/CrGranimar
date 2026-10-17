@@ -1,0 +1,54 @@
+/* Dedicated work gallery: photography first, all projects available on entry. */
+.all-work-link { display: inline-flex; align-items: center; gap: 1.5rem; width: fit-content; font-size: var(--font-caption); letter-spacing: .04em; color: var(--accent); padding-block: .65rem; border-bottom: 1px solid #c6b68f60; transition: color .25s, border-color .25s; }
+.all-work-link:hover { color: var(--text); border-color: var(--text); }
+.all-work-link span { font-size: 1.1rem; }
+.section-portfolio > .all-work-link { margin: -1.5rem 0 1.5rem; }
+.work-intro { padding: 3rem var(--gutter) 4rem; }
+.work-breadcrumb { display: flex; gap: .9rem; align-items: center; font-size: var(--font-label); color: var(--muted); margin-bottom: 3.5rem; }
+.work-breadcrumb a:hover { color: var(--accent); }
+.work-breadcrumb > span[aria-hidden] { color: #ffffff40; }
+.work-heading { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: end; }
+.work-heading h1 { font-size: clamp(3.8rem, 7.5vw, 7.8rem); line-height: .96; letter-spacing: -.065em; font-weight: 600; }
+.work-heading h1 span { color: var(--accent); font-weight: 400; }
+.work-description { max-width: 25rem; padding-bottom: .4rem; }
+.work-description p { font-size: .95rem; line-height: 1.9; color: var(--muted); margin-bottom: 1.5rem; }
+.work-collection { padding: 1rem var(--gutter) 5rem; }
+.work-gallery-heading { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1.3rem 0; margin-bottom: 1rem; border-top: 1px solid var(--border); }
+.work-gallery-heading h2 { font-size: var(--font-caption); font-weight: 500; letter-spacing: .05em; display: flex; align-items: center; gap: 1.5rem; }
+.work-gallery-heading h2 span { font-size: var(--font-label); color: var(--accent); border: 1px solid #c6b68f40; border-radius: 3rem; padding: .35rem .8rem; letter-spacing: 0; white-space: nowrap; }
+.work-gallery-heading p { font-size: var(--font-caption); color: var(--muted); }
+.works-page .project-photo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(160px, 16vw, 250px); gap: 1rem; }
+.works-page .project-photo { border: 0; border-radius: 3px; min-height: 0; aspect-ratio: auto; }
+.works-page .project-photo:nth-child(8n + 1) { grid-column: span 2; grid-row: span 2; }
+.works-page .project-photo:nth-child(8n + 2) { grid-column: span 2; }
+.work-back-top { display: flex; margin: 3rem auto 0; }
+.work-contact { padding: 4rem var(--gutter); border-block: 1px solid var(--border); background: #24281f; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.work-contact .eyebrow { font-size: .6rem; color: var(--accent); letter-spacing: .2em; margin-bottom: .8rem; }
+.work-contact h2 { font-size: clamp(2rem, 3.5vw, 3.8rem); letter-spacing: -.05em; font-weight: 500; line-height: 1.2; }
+.work-contact .hero-button { flex-shrink: 0; }
+@media (min-width: 901px) and (max-width: 1100px) {
+  .main-nav { gap: 1.2rem; }
+  .main-nav a { font-size: .6875rem; }
+}
+@media (max-width: 900px) {
+  .work-intro { padding-top: 2.2rem; }
+  .work-heading { gap: 2rem; }
+  .work-description p { font-size: var(--font-body); }
+  .work-gallery-heading { align-items: flex-start; }
+  .work-gallery-heading p { max-width: 12rem; text-align: right; }
+  .works-page .project-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: clamp(170px, 28vw, 250px); }
+}
+@media (max-width: 600px) {
+  .section-portfolio > .all-work-link { margin-top: -.5rem; }
+  .work-intro { padding-bottom: 2.5rem; }
+  .work-breadcrumb { margin-bottom: 2.4rem; }
+  .work-heading { grid-template-columns: 1fr; gap: 1.7rem; }
+  .work-heading h1 { font-size: clamp(3.4rem, 16vw, 4.8rem); }
+  .work-description p { font-size: var(--font-body); margin-bottom: 1rem; }
+  .work-gallery-heading { display: grid; gap: .8rem; padding-block: 1rem; }
+  .work-gallery-heading h2 { gap: .75rem; font-size: var(--font-label); }
+  .work-gallery-heading p { text-align: left; max-width: none; font-size: var(--font-label); }
+  .works-page .project-photo-grid { grid-auto-rows: 160px; gap: .75rem; }
+  .work-contact { align-items: flex-start; flex-direction: column; padding-block: 3rem; }
+  .work-back-top { font-size: var(--font-label); gap: 1rem; }
+}

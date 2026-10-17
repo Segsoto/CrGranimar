@@ -1,0 +1,130 @@
+/* Architectural art direction: offset photography, stone catalogue, editorial grids. */
+.home-page .hero-stage > .hero-bg {
+  top: 2rem;
+  left: 52%;
+  right: var(--gutter);
+  bottom: 2rem;
+  border: 1px solid #ffffff18;
+}
+.home-page .hero-landing .hero-bg img { object-position: 57% center; }
+.home-page .hero-overlay-inicio {
+  background: linear-gradient(90deg, #101110 35%, #101110e6 47%, #10111008 70%), linear-gradient(0deg, #10111066, transparent 50%);
+}
+.home-page .hero-content { padding-block: clamp(4rem, 6.2vw, 7rem) 4.5rem; }
+.home-page .hero-content h1 {
+  max-width: 12.5ch;
+  font-size: clamp(3.4rem, 5.5vw, 5.7rem);
+  line-height: .99;
+  letter-spacing: -.065em;
+  font-weight: 600;
+  text-wrap: pretty;
+  margin-bottom: 2.1rem;
+}
+.home-page .hero-content h1 span { display: block; font-weight: 400; }
+.home-page .hero-content .hero-copy { max-width: 34rem; font-size: var(--font-body); }
+.home-page .hero-content .hero-copy + .hero-copy { max-width: 32rem; font-size: var(--font-body-small); }
+.home-page .hero-support { background: #101110; }
+.home-page .support-card span { font-size: clamp(2rem, 3.2vw, 3rem); font-variant-numeric: lining-nums; }
+.home-page .section-intro { padding-block: 6rem 7rem; }
+.home-page .feature-card::before { font-size: .75rem; font-family: ui-monospace, monospace; }
+.home-page .feature-card h2 { max-width: 15ch; font-size: clamp(1.5rem, 2.1vw, 2rem); }
+.home-page .feature-card p { margin-top: auto; padding-top: 1.2rem; }
+.home-page .section-materials-preview {
+  grid-template-columns: 1.1fr 1fr;
+  background: #e5e2d9;
+  color: #262922;
+  padding-block: 5.5rem 7rem;
+  border-color: #26292220;
+  column-gap: 4rem;
+}
+.home-page .section-materials-preview h2 {
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  max-width: 10ch;
+  letter-spacing: -.06em;
+  line-height: 1.02;
+}
+.home-page .section-materials-preview .section-note { color: #54584d; align-self: end; max-width: 24rem; font-size: .9rem; }
+.home-page .materials-preview { grid-column: 1/-1; margin-top: 2.5rem; align-items: start; gap: clamp(.8rem, 2vw, 2rem); }
+.home-page .materials-card { border: 0; border-radius: 0; background: transparent; aspect-ratio: 3/4; }
+.home-page .materials-card:nth-child(even) { margin-top: 3.5rem; }
+.home-page .materials-card-bg { filter: none; }
+.home-page .materials-card-label { background: #e5e2d9; color: #262922; border-color: #26292230; padding-inline: 0; min-height: 4.5rem; font-size: 1.05rem; }
+.home-page .materials-card-label::after { color: #54584d; }
+.home-page .materials-card:hover { transform: translateY(-5px); border: 0; }
+.home-page .section-portfolio { padding-top: 7rem; gap: 1rem; }
+.home-page .section-heading { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; max-width: none; align-items: end; margin-bottom: 2.5rem; }
+.home-page .section-heading h2 { font-size: clamp(2.8rem, 5vw, 4.8rem); max-width: 11ch; letter-spacing: -.06em; line-height: 1.02; }
+.home-page .section-heading p { max-width: 27rem; margin: 0; }
+.home-page .portfolio-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: clamp(180px, 18vw, 280px); gap: 1rem; }
+.home-page .portfolio-card { display: block; position: relative; border: 0; border-radius: 3px; }
+.home-page .portfolio-card:nth-child(1) { grid-column: 1/8; grid-row: 1/3; }
+.home-page .portfolio-card:nth-child(2) { grid-column: 8/13; grid-row: 1; }
+.home-page .portfolio-card:nth-child(3) { grid-column: 8/13; grid-row: 2; }
+.home-page .portfolio-card:nth-child(4) { grid-column: 1/13; grid-row: 3; }
+.home-page .portfolio-photo { height: 100%; aspect-ratio: auto; }
+.home-page .portfolio-card p { position: absolute; inset: auto 0 0; pointer-events: none; border: 0; padding: 3rem 1.5rem 1.3rem; background: linear-gradient(transparent, #101110d9); font-size: .65rem; letter-spacing: .14em; }
+.home-page .portfolio-photo .photo-expand { bottom: 1.1rem; right: 1.2rem; z-index: 2; }
+.home-page .project-photo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(160px, 15vw, 230px); gap: 1rem; }
+.home-page .project-photo { aspect-ratio: auto; min-height: 0; border: 0; border-radius: 3px; }
+.home-page .project-photo:nth-child(8n + 1) { grid-column: span 2; grid-row: span 2; }
+.home-page .project-photo:nth-child(8n + 2) { grid-column: span 2; }
+.home-page .gallery-toggle { border: 0; border-bottom: 1px solid #c6b68f75; padding-inline: 0; margin-top: 2.5rem; letter-spacing: .09em; }
+.home-page .gallery-toggle:hover { background: transparent; color: white; border-color: white; }
+.home-page .section-contact { background: #24281f; padding-block: 6rem; }
+.home-page .section-contact h2 { font-size: clamp(2.8rem, 5vw, 4.8rem); max-width: 9ch; line-height: 1.02; letter-spacing: -.06em; }
+.home-page .section-contact .cta-panel { padding: 2.5rem; border: 1px solid #c6b68f50; background: #ffffff03; }
+.home-page .section-contact .cta-panel .hero-button { margin-top: 1rem; }
+@media (min-width: 1600px) {
+  .home-page .hero-content .hero-copy { max-width: 39rem; }
+  .home-page .hero-content .hero-copy + .hero-copy { max-width: 36rem; }
+}
+@media (max-width: 1100px) {
+  .home-page .hero-content h1 { font-size: clamp(3.2rem, 6vw, 4.1rem); }
+  .home-page .hero-content .hero-copy { max-width: 29rem; }
+  .home-page .hero-content .hero-copy + .hero-copy { max-width: 28rem; }
+  .home-page .section-heading, .home-page .section-materials-preview { column-gap: 2rem; }
+}
+@media (max-width: 900px) {
+  .home-page .hero-stage > .hero-bg { left: 42%; bottom: 2rem; }
+  .home-page .hero-overlay-inicio { background: linear-gradient(90deg, #101110 26%, #101110dc 40%, #10111035 100%); }
+  .home-page .hero-content h1 { max-width: 13ch; }
+  .home-page .support-card span { font-size: 1.75rem; }
+  .home-page .section-intro { padding-block: 4rem; }
+  .home-page .feature-card h2 { max-width: none; font-size: 1.5rem; }
+  .home-page .feature-card p { margin: 0; padding: 0; }
+  .home-page .materials-preview { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .home-page .materials-card-label { font-size: .85rem; min-height: 3.5rem; }
+  .home-page .materials-card:nth-child(even) { margin-top: 2.5rem; }
+  .home-page .section-portfolio { padding-top: 4rem; }
+  .home-page .section-contact .cta-panel { max-width: 38rem; }
+}
+@media (max-width: 600px) {
+  .home-page .hero-stage > .hero-bg { inset: 0; height: auto; border: 0; }
+  .home-page .hero-landing .hero-bg img { object-position: 65% center; }
+  .home-page .hero-overlay-inicio { inset: 0; height: auto; background: linear-gradient(90deg, #101110eb, #1011109e), linear-gradient(0deg, #101110 3%, transparent 80%); }
+  .home-page .hero-content { padding-block: 3.5rem; }
+  .home-page .hero-content h1 { max-width: 100%; font-size: clamp(2.05rem, 10.2vw, 3.5rem); line-height: 1.03; margin-bottom: 1.8rem; }
+  .home-page .hero-content h1 span { margin-top: .12em; }
+  .home-page .hero-content .hero-copy { font-size: var(--font-body-small); }
+  .home-page .hero-content .hero-copy + .hero-copy { font-size: var(--font-caption); }
+  .home-page .support-card span { font-size: 1.25rem; }
+  .home-page .section-materials-preview { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 3.5rem 4.5rem; }
+  .home-page .section-materials-preview h2, .home-page .section-heading h2, .home-page .section-contact h2 { font-size: 2.8rem; }
+  .home-page .section-materials-preview .section-note { font-size: var(--font-body-small); }
+  .home-page .materials-preview { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: .5rem; gap: .75rem; }
+  .home-page .materials-card:nth-child(even) { margin-top: 2rem; }
+  .home-page .materials-card-label { font-size: .9rem; }
+  .home-page .section-heading { grid-template-columns: 1fr; gap: 1.3rem; margin-bottom: 1rem; }
+  .home-page .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 150px; gap: .75rem; }
+  .home-page .portfolio-card:nth-child(1) { grid-column: 1/3; grid-row: 1/3; }
+  .home-page .portfolio-card:nth-child(2) { grid-column: 1; grid-row: 3; }
+  .home-page .portfolio-card:nth-child(3) { grid-column: 2; grid-row: 3; }
+  .home-page .portfolio-card:nth-child(4) { grid-column: 1/3; grid-row: 4; }
+  .home-page .portfolio-card p { font-size: .6875rem; padding: 2.5rem .7rem .7rem; letter-spacing: .06em; }
+  .home-page .portfolio-photo .photo-expand { bottom: 2.3rem; right: .6rem; }
+  .home-page .project-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 155px; gap: .75rem; }
+  .home-page .project-photo:nth-child(8n + 1) { grid-column: span 2; grid-row: span 2; }
+  .home-page .project-photo:nth-child(8n + 2) { grid-column: span 2; }
+  .home-page .section-contact { padding-block: 4rem; }
+  .home-page .section-contact .cta-panel { padding: 1.4rem; }
+}
